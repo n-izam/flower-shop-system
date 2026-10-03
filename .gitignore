@@ -1,0 +1,28 @@
+# Environments & Secrets
+.env
+.env.*
+!.env.example
+venv/
+env/
+ENV/
+
+# Python / Django
+__pycache__/
+*.py[cod]
+*$py.class
+*.sqlite3
+*.log
+
+# Node / Frontend / Mobile
+node_modules/
+.npm
+dist/
+build/
+.expo/
+.flutter-plugins
+
+# IDE & OS Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

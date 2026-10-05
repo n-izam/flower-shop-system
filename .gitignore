@@ -1,4 +1,4 @@
-# Environments & Secrets
+python manage.py startapp orders# Environments & Secrets
 .env
 .env.*
 !.env.example

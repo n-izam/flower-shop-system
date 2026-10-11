@@ -69,6 +69,9 @@ DATABASES = {
     'default': env.db_url('DATABASE_URL', default=f"postgres://{env('DB_USER')}:{env('DB_PASSWORD')}@{env('DB_HOST')}:{env('DB_PORT')}/{env('DB_NAME')}")
 }
 
+# Custom User Model definition
+AUTH_USER_MODEL = 'accounts.User'
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',

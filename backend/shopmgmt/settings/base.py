@@ -1,6 +1,7 @@
 import os
 import environ
 from pathlib import Path
+from datetime import timedelta
 
 # Points to backend/ directory (3 levels up from settings/base.py)
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -81,6 +82,17 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 20,
+}
+
+# SimpleJWT Configuration
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),     # 1 hour lifetime for access tokens
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),        # 7 days lifetime for refresh tokens
+    'ROTATE_REFRESH_TOKENS': True,                       # Issue a new refresh token when refreshing
+    'BLACKLIST_AFTER_ROTATION': True,                   # Invalidate old refresh token upon refresh
+    'AUTH_HEADER_TYPES': ('Bearer',),                    # Header format: Authorization: Bearer <token>
+    'USER_ID_FIELD': 'id',
+    'USER_ID_CLAIM': 'user_id',
 }
 
 LANGUAGE_CODE = 'en-us'

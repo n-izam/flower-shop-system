@@ -8,6 +8,8 @@ class User(AbstractUser):
         OWNER = 'OWNER', 'Shop Owner'
         MANAGER = 'MANAGER', 'Shop Manager'
         WORKER = 'WORKER', 'Florist / Staff Worker'
+        DELIVERY = 'DELIVERY', 'Delivery Personnel'
+        ACCOUNTANT = 'ACCOUNTANT', 'Accountant (Read-Only)'
 
     role = models.CharField(
         max_length=20,
@@ -50,3 +52,11 @@ class User(AbstractUser):
     @property
     def is_worker(self):
         return self.role == self.Role.WORKER
+    
+    @property
+    def is_delivery(self):
+        return self.role == self.Role.DELIVERY
+
+    @property
+    def is_accountant(self):
+        return self.role == self.Role.ACCOUNTANT

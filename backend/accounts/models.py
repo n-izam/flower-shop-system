@@ -8,8 +8,8 @@ class User(AbstractUser):
         OWNER = 'OWNER', 'Shop Owner'
         MANAGER = 'MANAGER', 'Shop Manager'
         WORKER = 'WORKER', 'Florist / Staff Worker'
-        DELIVERY = 'DELIVERY', 'Delivery Personnel'
-        ACCOUNTANT = 'ACCOUNTANT', 'Accountant (Read-Only)'
+        DELIVERY = 'DELIVERY', 'Delivery Driver'
+        ACCOUNTANT = 'ACCOUNTANT', 'Accountant'
 
     role = models.CharField(
         max_length=20,
